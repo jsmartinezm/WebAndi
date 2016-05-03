@@ -12,7 +12,11 @@ and open the template in the editor.
    background-repeat: no-repeat;
    background-size: 100%;
 }
-
+.contenido h3 {
+    font-size: 15px;
+    padding: 0px;
+    margin: 5px;
+}
 #desc{
 padding-right: 25px;
 }
@@ -21,6 +25,39 @@ padding-right: 25px;
     padding-top: 60px;
     padding-bottom: 100px;
 
+}
+#desc h3 {
+    font-size: 22px;
+    font-weight: bold;
+}
+#formulario button{
+
+    float: right;
+    margin-top: 55px;
+    border-radius: 20px;
+
+}
+.barratop{
+        background: rgb(241,241,241);
+}
+#footermontado {
+    background: url('../img/footer.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    min-height: 240px;
+    position: relative;
+    margin-top: -190px;
+    z-index: 500;
+}
+#desc h3,#complete h4{
+    color: green !important;
+}
+#desc img {
+    padding: 25px 0px 25px 0px;
+}
+#complete div, #complete{
+    padding: 0px;
+    text-align: right;
 }
 .verde {
     margin-top: 20px;
@@ -191,7 +228,15 @@ padding-right: 25px;
 .back {
     background-image: url('../img/back.png');
     background-repeat: no-repeat;
-        padding-top: 250px;
+        padding-top: 90px;
+}
+#complete h3{
+    margin:0px;
+        font-weight: bold;
+}
+#complete{
+    padding-bottom: 60px;
+
 }
 .ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button {
     font-family: Arial,sans-serif;
@@ -222,17 +267,27 @@ ul li{
         float: none !important;
 }
 #barraazul{
-    background: blue;
+    background: rgb(54,47,146);
         margin-top: 70px;
         color:white;
             width: 100%;
     margin-right: 0px;
     margin-left: 0px;
 }
-.contenido h1{
-        padding-top: 75px;
-        padding-bottom: 30px;
+.contenido h1 {
+    padding-top: 10px;
+    padding-bottom: 15px;
+   font-size: 20px;
+    font-weight: bold;
 }
+
+.contenido ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}
+
+
 .fotolat {
     padding: 0px !important;
 }
@@ -248,13 +303,14 @@ ul li{
 .centrar span{
         text-transform: uppercase;
 }
+
 #barraazul .centrar{
         padding-top: 15px;
     padding-bottom: 15px;
     font-size: 20px;
 }
 #barraazulosc{
-    background: green;
+    background: rgb(42,50,96);
     color:white;
         padding-top: 10px;
     padding-bottom: 10px;
