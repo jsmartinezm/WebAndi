@@ -1,5 +1,5 @@
 package com.andi.model;
-// Generated 23/04/2016 10:02:31 PM by Hibernate Tools 4.3.1
+// Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,8 @@ public class AsuntoRelevante  implements java.io.Serializable {
 
      private long asuntoId;
      private String asuntoNombre;
-     private Set<SubsectorAsunto> subsectorAsuntos = new HashSet<SubsectorAsunto>(0);
+     private String asuntoTipo;
+     private Set subsectorAsuntos = new HashSet(0);
 
     public AsuntoRelevante() {
     }
@@ -22,9 +23,10 @@ public class AsuntoRelevante  implements java.io.Serializable {
     public AsuntoRelevante(long asuntoId) {
         this.asuntoId = asuntoId;
     }
-    public AsuntoRelevante(long asuntoId, String asuntoNombre, Set<SubsectorAsunto> subsectorAsuntos) {
+    public AsuntoRelevante(long asuntoId, String asuntoNombre, String asuntoTipo, Set subsectorAsuntos) {
        this.asuntoId = asuntoId;
        this.asuntoNombre = asuntoNombre;
+       this.asuntoTipo = asuntoTipo;
        this.subsectorAsuntos = subsectorAsuntos;
     }
    
@@ -42,11 +44,18 @@ public class AsuntoRelevante  implements java.io.Serializable {
     public void setAsuntoNombre(String asuntoNombre) {
         this.asuntoNombre = asuntoNombre;
     }
-    public Set<SubsectorAsunto> getSubsectorAsuntos() {
+    public String getAsuntoTipo() {
+        return this.asuntoTipo;
+    }
+    
+    public void setAsuntoTipo(String asuntoTipo) {
+        this.asuntoTipo = asuntoTipo;
+    }
+    public Set getSubsectorAsuntos() {
         return this.subsectorAsuntos;
     }
     
-    public void setSubsectorAsuntos(Set<SubsectorAsunto> subsectorAsuntos) {
+    public void setSubsectorAsuntos(Set subsectorAsuntos) {
         this.subsectorAsuntos = subsectorAsuntos;
     }
 

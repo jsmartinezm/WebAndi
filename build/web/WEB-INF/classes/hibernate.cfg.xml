@@ -18,6 +18,7 @@
     <mapping resource="com/andi/model/SubsectorFoco.hbm.xml"/>
     <mapping resource="com/andi/model/FocoInversionSocial.hbm.xml"/>
     <mapping resource="com/andi/model/SubsectorAsunto.hbm.xml"/>
+    <mapping resource="com/andi/model/RespuestaPregunta.hbm.xml"/>
     <mapping resource="com/andi/model/Pregunta.hbm.xml"/>
     <mapping resource="com/andi/model/Dimension.hbm.xml"/>
     <mapping resource="com/andi/model/AsuntoRelevante.hbm.xml"/>

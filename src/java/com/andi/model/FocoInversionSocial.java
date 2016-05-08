@@ -1,5 +1,5 @@
 package com.andi.model;
-// Generated 23/04/2016 10:02:31 PM by Hibernate Tools 4.3.1
+// Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class FocoInversionSocial  implements java.io.Serializable {
 
      private long foinsoId;
      private String foinsoNombre;
-     private Set<SubsectorFoco> subsectorFocos = new HashSet<SubsectorFoco>(0);
+     private Set subsectorFocos = new HashSet(0);
 
     public FocoInversionSocial() {
     }
@@ -22,7 +22,7 @@ public class FocoInversionSocial  implements java.io.Serializable {
     public FocoInversionSocial(long foinsoId) {
         this.foinsoId = foinsoId;
     }
-    public FocoInversionSocial(long foinsoId, String foinsoNombre, Set<SubsectorFoco> subsectorFocos) {
+    public FocoInversionSocial(long foinsoId, String foinsoNombre, Set subsectorFocos) {
        this.foinsoId = foinsoId;
        this.foinsoNombre = foinsoNombre;
        this.subsectorFocos = subsectorFocos;
@@ -42,14 +42,13 @@ public class FocoInversionSocial  implements java.io.Serializable {
     public void setFoinsoNombre(String foinsoNombre) {
         this.foinsoNombre = foinsoNombre;
     }
-    public Set<SubsectorFoco> getSubsectorFocos() {
+    public Set getSubsectorFocos() {
         return this.subsectorFocos;
     }
     
-    public void setSubsectorFocos(Set<SubsectorFoco> subsectorFocos) {
+    public void setSubsectorFocos(Set subsectorFocos) {
         this.subsectorFocos = subsectorFocos;
     }
-    
 
 
 
