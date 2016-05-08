@@ -78,6 +78,7 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
         AutodiagnosticoDonacionDAO autoDAO = new AutodiagnosticoDonacionDAO();
         setPreguntas(autoDAO.getPreguntas());
         setPregunta1(getPreguntas().get(0));
+        pregunta1.setClase("");
         pregunta1.setRespuesta("Si");
         setPregunta2(getPreguntas().get(1));
         pregunta2.setRespuesta("Si");
@@ -122,11 +123,45 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
      */
     
     public String respondePregunta() {
-        if(pregunta1.getRespuesta().equals("No")){
-          pregunta2.setClase("display:none !important;"); 
+       if(pregunta1.getRespuesta().equals("1")){
+            cambiarEstadoDependeUno("");
         }else{
-            pregunta2.setClase("");    
+            cambiarEstadoDependeUno("display:none !important;");
+            pregunta2.setRespuesta("0");
         }
+        if(pregunta2.getRespuesta().equals("1")){
+            cambiarEstadoDependeDos("");
+        }else{
+            cambiarEstadoDependeDos("display:none !important;"); 
+            pregunta6.setRespuesta("0");
+        }
+        if(pregunta6.getRespuesta().equals("1") || pregunta6.getRespuesta().equals("2")){
+            cambiarEstadoDependeSeis("");
+        }else{
+            cambiarEstadoDependeSeis("display:none !important;"); 
+        }
+        /**
+        if(pregunta6.getRespuesta().equals("1")| pregunta6.getRespuesta().equals("2")){
+            cambiarEstadoDependeSeis("");
+        }else{
+            cambiarEstadoDependeSeis("display:none !important;"); 
+        }
+        if(pregunta9.getRespuesta().equals("1")|pregunta9.getRespuesta().equals("2")){
+            cambiarEstadoDependeNueve("");
+        }else{
+            cambiarEstadoDependeNueve("display:none !important;"); 
+        }
+        if(pregunta7.getRespuesta().equals("1")){
+            cambiarEstadoDependeSiete("");
+        }else{
+            cambiarEstadoDependeSiete("display:none !important;"); 
+        }
+        if(pregunta91.getRespuesta().equals("1")){
+            cambiarEstadoDependeNueveUno("");
+        }else{
+            cambiarEstadoDependeNueveUno("display:none !important;"); 
+        }
+        **/
         FacesContext fctx = FacesContext.getCurrentInstance();  
         String pageToRefresh = fctx.getViewRoot().getViewId();   //getting View Id of current page  
         ViewHandler viewHandler = fctx.getApplication().getViewHandler();      
@@ -134,11 +169,38 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
         viewRoot.setViewId(pageToRefresh);  
         fctx.setViewRoot(viewRoot);     //set the viewroot in facesContext to reload  
         return null;  
+        
     } 
     public ArrayList<Pregunta> getPreguntas() {
         return preguntas;
     }
-
+    public void cambiarEstadoDependeUno(String accion){
+        pregunta2.setClase(accion);
+    }
+    public void cambiarEstadoDependeDos(String accion){
+        pregunta3.setClase(accion);
+        pregunta4.setClase(accion);
+        pregunta5.setClase(accion);
+        pregunta6.setClase(accion);
+        pregunta9.setClase(accion);
+    }
+    public void cambiarEstadoDependeSeis(String accion){
+        pregunta7.setClase(accion);
+        pregunta8.setClase(accion);
+    }
+    public void cambiarEstadoDependeSiete(String accion){
+        pregunta71.setClase(accion);
+        pregunta72.setClase(accion);
+    }
+    public void cambiarEstadoDependeNueve(String accion){
+        pregunta91.setClase(accion);
+        pregunta10.setClase(accion);
+    }
+    public void cambiarEstadoDependeNueveUno(String accion){
+        pregunta911.setClase(accion);
+        pregunta912.setClase(accion);
+    }
+    
     /**
      * @param preguntas the preguntas to set
      */
