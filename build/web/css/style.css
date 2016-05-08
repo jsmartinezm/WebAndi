@@ -12,6 +12,9 @@ and open the template in the editor.
    background-repeat: no-repeat;
    background-size: 100%;
 }
+.novisible{
+    display:none !important;
+}
 .contenido h3 {
     font-size: 15px;
     padding: 0px;
@@ -274,6 +277,23 @@ ul li{
     margin-right: 0px;
     margin-left: 0px;
 }
+#barranaranja{
+    background: #ec971f;
+        margin-top: 70px;
+        color:white;
+            width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+#barraverde{
+    background: #5bc0de;
+        margin-top: 70px;
+        color:white;
+            width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
 .contenido h1 {
     padding-top: 10px;
     padding-bottom: 15px;
@@ -318,6 +338,28 @@ ul li{
     margin-right: 0px;
     margin-left: 0px;
 }
+#barraverdeosc{
+    background: #5BC0B4;
+    color:white;
+        padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#barranaranjaosc{
+    background: #EC977A;
+    color:white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+
+
 .center {
     display:table-cell;
     vertical-align:middle;

@@ -1,8 +1,5 @@
 package com.andi.model;
-// Generated 23/04/2016 10:02:31 PM by Hibernate Tools 4.3.1
-
-import org.hibernate.annotations.Proxy;
-
+// Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1
 
 
 

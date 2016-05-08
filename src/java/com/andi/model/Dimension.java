@@ -1,5 +1,5 @@
 package com.andi.model;
-// Generated 23/04/2016 10:02:31 PM by Hibernate Tools 4.3.1
+// Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ public class Dimension  implements java.io.Serializable {
 
      private long dimensionId;
      private String dimensionDescripcion;
-     private Set<Recomendacion> recomendacions = new HashSet<Recomendacion>(0);
+     private Set recomendacions = new HashSet(0);
 
     public Dimension() {
     }
@@ -22,7 +22,7 @@ public class Dimension  implements java.io.Serializable {
     public Dimension(long dimensionId) {
         this.dimensionId = dimensionId;
     }
-    public Dimension(long dimensionId, String dimensionDescripcion, Set<Recomendacion> recomendacions) {
+    public Dimension(long dimensionId, String dimensionDescripcion, Set recomendacions) {
        this.dimensionId = dimensionId;
        this.dimensionDescripcion = dimensionDescripcion;
        this.recomendacions = recomendacions;
@@ -42,11 +42,11 @@ public class Dimension  implements java.io.Serializable {
     public void setDimensionDescripcion(String dimensionDescripcion) {
         this.dimensionDescripcion = dimensionDescripcion;
     }
-    public Set<Recomendacion> getRecomendacions() {
+    public Set getRecomendacions() {
         return this.recomendacions;
     }
     
-    public void setRecomendacions(Set<Recomendacion> recomendacions) {
+    public void setRecomendacions(Set recomendacions) {
         this.recomendacions = recomendacions;
     }
 

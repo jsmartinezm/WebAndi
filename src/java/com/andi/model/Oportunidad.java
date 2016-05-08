@@ -1,5 +1,5 @@
 package com.andi.model;
-// Generated 23/04/2016 10:02:31 PM by Hibernate Tools 4.3.1
+// Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -13,7 +13,8 @@ public class Oportunidad  implements java.io.Serializable {
 
      private long oportunidadId;
      private String oportunidadDescripcion;
-     private Set<SubsectorOportunidad> subsectorOportunidads = new HashSet<SubsectorOportunidad>(0);
+     private String oportunidadTipo;
+     private Set subsectorOportunidads = new HashSet(0);
 
     public Oportunidad() {
     }
@@ -22,9 +23,10 @@ public class Oportunidad  implements java.io.Serializable {
     public Oportunidad(long oportunidadId) {
         this.oportunidadId = oportunidadId;
     }
-    public Oportunidad(long oportunidadId, String oportunidadDescripcion, Set<SubsectorOportunidad> subsectorOportunidads) {
+    public Oportunidad(long oportunidadId, String oportunidadDescripcion, String oportunidadTipo, Set subsectorOportunidads) {
        this.oportunidadId = oportunidadId;
        this.oportunidadDescripcion = oportunidadDescripcion;
+       this.oportunidadTipo = oportunidadTipo;
        this.subsectorOportunidads = subsectorOportunidads;
     }
    
@@ -42,11 +44,18 @@ public class Oportunidad  implements java.io.Serializable {
     public void setOportunidadDescripcion(String oportunidadDescripcion) {
         this.oportunidadDescripcion = oportunidadDescripcion;
     }
-    public Set<SubsectorOportunidad> getSubsectorOportunidads() {
+    public String getOportunidadTipo() {
+        return this.oportunidadTipo;
+    }
+    
+    public void setOportunidadTipo(String oportunidadTipo) {
+        this.oportunidadTipo = oportunidadTipo;
+    }
+    public Set getSubsectorOportunidads() {
         return this.subsectorOportunidads;
     }
     
-    public void setSubsectorOportunidads(Set<SubsectorOportunidad> subsectorOportunidads) {
+    public void setSubsectorOportunidads(Set subsectorOportunidads) {
         this.subsectorOportunidads = subsectorOportunidads;
     }
 

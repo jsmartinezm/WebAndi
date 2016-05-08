@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.andi.model.RespuestaPregunta" table="respuesta_pregunta" schema="dbo" catalog="andi" optimistic-lock="version">
+        <id name="respuestaId" type="long">
+            <column name="respuesta_id" precision="18" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="pregunta" class="com.andi.model.Pregunta" fetch="select">
+            <column name="respuesta_pregunta_id" precision="18" scale="0" />
+        </many-to-one>
+        <property name="respuestaDescripcion" type="string">
+            <column name="respuesta_descripcion" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

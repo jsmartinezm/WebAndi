@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/04/2016 10:02:32 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.andi.model.FocoInversionSocial" table="foco_inversion_social" schema="dbo" catalog="andi" optimistic-lock="version">
         <id name="foinsoId" type="long">
@@ -9,7 +9,7 @@
             <generator class="assigned" />
         </id>
         <property name="foinsoNombre" type="string">
-            <column name="foinso_nombre" length="100" />
+            <column name="foinso_nombre" length="300" />
         </property>
         <set name="subsectorFocos" table="subsector_foco" inverse="true" lazy="true" fetch="select">
             <key>

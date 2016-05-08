@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/04/2016 10:02:32 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.andi.model.AsuntoRelevante" table="asunto_relevante" schema="dbo" catalog="andi" optimistic-lock="version">
         <id name="asuntoId" type="long">
@@ -9,7 +9,10 @@
             <generator class="assigned" />
         </id>
         <property name="asuntoNombre" type="string">
-            <column name="asunto_nombre" length="100" />
+            <column name="asunto_nombre" length="300" />
+        </property>
+        <property name="asuntoTipo" type="string">
+            <column name="asunto_tipo" length="50" />
         </property>
         <set name="subsectorAsuntos" table="subsector_asunto" inverse="true" lazy="true" fetch="select">
             <key>

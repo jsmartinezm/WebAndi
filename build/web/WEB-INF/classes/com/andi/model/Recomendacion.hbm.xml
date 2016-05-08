@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/04/2016 10:02:32 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 7/05/2016 07:34:50 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.andi.model.Recomendacion" table="recomendacion" schema="dbo" catalog="andi" optimistic-lock="version">
         <id name="recomendacionId" type="long">
