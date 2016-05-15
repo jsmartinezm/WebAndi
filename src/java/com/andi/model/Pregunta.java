@@ -22,6 +22,7 @@ public class Pregunta  implements java.io.Serializable {
 
     public Pregunta() {
         clase = "display:none !important;";
+        respuesta = "0";
     }
 
 	

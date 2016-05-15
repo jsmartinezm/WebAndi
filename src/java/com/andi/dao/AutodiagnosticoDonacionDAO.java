@@ -25,11 +25,11 @@ public class AutodiagnosticoDonacionDAO {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try{
             tx = session.beginTransaction();
-            String queryString = "from Pregunta pre where  pre.preguntaCuestionario = 1 order by pre.preguntaId asc)";
+            String queryString = "from Pregunta pre where  pre.preguntaCuestionario = 1 order by pre.preguntaId asc";
             Query query = session.createQuery(queryString);
             preguntas = (ArrayList<Pregunta>)query.list();
         }catch(RuntimeException e){
-            e.printStackTrace();
+            //e.printStackTrace();
             if(tx!=null){
                 tx.rollback();
             }

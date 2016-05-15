@@ -12,7 +12,28 @@ and open the template in the editor.
    background-repeat: no-repeat;
    background-size: 100%;
 }
-
+.ui-selectonemenu{
+    border-radius: 15px;
+    padding: 0px 20px 0px 20px;
+    border: 0px;
+}
+.ui-state-default .ui-icon{
+    background: url('../img/selector.png') !important;
+    width: 12px;
+    margin-top: 6px !important;
+    margin-left: -10px !important;
+}
+#preguntasContainer ul li {
+    display: inline !important;
+    list-style-image: none;
+    border-left: 5px solid red;
+    margin-bottom: 50px;
+}
+#preguntasContainer h3{
+    min-height: 70px !important;
+        font-size: 13px;
+    font-weight: bold;
+}
 #formu{
     max-height: 400px;
     overflow-y: scroll;

@@ -32,6 +32,18 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
      */
     private ArrayList<Pregunta> preguntas;
     private ArrayList<Pregunta> todasPreguntas;
+    private String continua;
+    private String continuaDos;
+    private String continuaTres;
+    private String continuaCuatro;
+    private String finaliza;
+    
+    private String primeraPagina;
+    private String segundaPagina;
+    private String terceraPagina;
+    private String cuartaPagina;
+    private String quintaPagina;
+    
     
     private Pregunta pregunta1;
     private Pregunta pregunta2;
@@ -68,20 +80,30 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
     private Pregunta pregunta19;
     private Pregunta pregunta191;
     private Pregunta pregunta192;
+    
     public AutodiagnosticoDonacionesBean() {
     }
     
     @PostConstruct
     public void init() {
+        setContinua("pointer-events: none;opacity: 0.5;");
+        setContinuaDos("display:none;");
+        setContinuaTres("display:none;");
+        setFinaliza("display:none;");
+        setContinuaCuatro("display:none;");
         
+        primeraPagina = "";
+        segundaPagina = "display:none !important;";
+        terceraPagina = "display:none !important;";
+        cuartaPagina = "display:none !important";
+        quintaPagina = "display:none !important";
         FacesContext context = FacesContext.getCurrentInstance();
         AutodiagnosticoDonacionDAO autoDAO = new AutodiagnosticoDonacionDAO();
         setPreguntas(autoDAO.getPreguntas());
         setPregunta1(getPreguntas().get(0));
         pregunta1.setClase("");
-        pregunta1.setRespuesta("Si");
+        pregunta1.setRespuesta("");
         setPregunta2(getPreguntas().get(1));
-        pregunta2.setRespuesta("Si");
         setPregunta3(getPreguntas().get(2));
         setPregunta4(getPreguntas().get(3));
         setPregunta5(getPreguntas().get(4));
@@ -96,6 +118,7 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
         setPregunta912(getPreguntas().get(13));
         setPregunta10(getPreguntas().get(14));
         setPregunta11(getPreguntas().get(15));
+   
         setPregunta111(getPreguntas().get(16));
         setPregunta12(getPreguntas().get(17));
         setPregunta121(getPreguntas().get(18));
@@ -133,13 +156,71 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
             cambiarEstadoDependeDos("");
         }else{
             cambiarEstadoDependeDos("display:none !important;"); 
-            pregunta6.setRespuesta("0");
+            
         }
         if(pregunta6.getRespuesta().equals("1") || pregunta6.getRespuesta().equals("2")){
             cambiarEstadoDependeSeis("");
         }else{
             cambiarEstadoDependeSeis("display:none !important;"); 
         }
+        if(pregunta9.getRespuesta().equals("1")){
+            cambiarEstadoDependeNueve("");
+        }else{
+            cambiarEstadoDependeNueve("display:none !important;"); 
+        }
+        
+        if(pregunta7 != null){
+            if(pregunta7.getRespuesta().equals("1")){
+            cambiarEstadoDependeSiete("");
+            }else{
+                cambiarEstadoDependeSiete("display:none !important;"); 
+            }
+        }
+        if(pregunta91 != null){
+            if(pregunta91.getRespuesta().equals("1")){
+                cambiarEstadoDependeNueveUno("");
+            }else{
+                cambiarEstadoDependeNueveUno("display:none !important;"); 
+            }
+        }
+        if(pregunta13 != null){
+            if(pregunta13.getRespuesta().equals("1")){
+                cambiarEstadoDependeTrece("");
+            }else{
+                cambiarEstadoDependeTrece("display:none !important;"); 
+            }
+        }
+        if(pregunta11 != null){
+            if(pregunta11.getRespuesta().equals("1")){
+                cambiarEstadoDependeOnce("");
+            }else{
+                cambiarEstadoDependeOnce("display:none !important;"); 
+            }
+        }
+        if(pregunta12 != null){
+            if(pregunta12.getRespuesta().equals("1")){
+                cambiarEstadoDependeDoce("");
+            }else{
+                cambiarEstadoDependeDoce("display:none !important;"); 
+            }
+        }
+        
+        if(pregunta13 != null){
+            if(pregunta13.getRespuesta().equals("1")){
+                cambiarEstadoDependeTrece("");
+            }else{
+                cambiarEstadoDependeTrece("display:none !important;"); 
+            }
+        }
+        
+        if(pregunta19 != null){
+            if(pregunta19.getRespuesta().equals("1")){
+                cambiarEstadoDependeDiecinueve("");
+            }else{
+                cambiarEstadoDependeDiecinueve("display:none !important;"); 
+            }
+        }
+        
         /**
         if(pregunta6.getRespuesta().equals("1")| pregunta6.getRespuesta().equals("2")){
             cambiarEstadoDependeSeis("");
@@ -162,6 +243,7 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
             cambiarEstadoDependeNueveUno("display:none !important;"); 
         }
         **/
+        desbloqueaSiguiente();
         FacesContext fctx = FacesContext.getCurrentInstance();  
         String pageToRefresh = fctx.getViewRoot().getViewId();   //getting View Id of current page  
         ViewHandler viewHandler = fctx.getApplication().getViewHandler();      
@@ -177,12 +259,39 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
     public void cambiarEstadoDependeUno(String accion){
         pregunta2.setClase(accion);
     }
+    public void cambiarEstadoDependeDiecinueve(String accion){
+        pregunta191.setClase(accion);
+        pregunta192.setClase(accion);
+        
+    }
+    public void cambiarEstadoDependeTrece(String accion){
+        pregunta131.setClase(accion);
+    }
+    public void cambiarEstadoDependeOnce(String accion){
+        pregunta111.setClase(accion);
+        pregunta12.setClase(accion);
+        
+    }
+    public void cambiarEstadoDependeDoce(String accion){
+        pregunta121.setClase(accion);
+        pregunta122.setClase(accion);
+        pregunta123.setClase(accion);
+        pregunta124.setClase(accion);
+        pregunta125.setClase(accion);
+        pregunta126.setClase(accion);
+        pregunta127.setClase(accion);
+        
+    }
     public void cambiarEstadoDependeDos(String accion){
         pregunta3.setClase(accion);
         pregunta4.setClase(accion);
         pregunta5.setClase(accion);
         pregunta6.setClase(accion);
         pregunta9.setClase(accion);
+        if(!accion.equals("")){
+            pregunta6.setRespuesta("0");
+            pregunta9.setRespuesta("0");
+        }
     }
     public void cambiarEstadoDependeSeis(String accion){
         pregunta7.setClase(accion);
@@ -195,6 +304,7 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
     public void cambiarEstadoDependeNueve(String accion){
         pregunta91.setClase(accion);
         pregunta10.setClase(accion);
+     
     }
     public void cambiarEstadoDependeNueveUno(String accion){
         pregunta911.setClase(accion);
@@ -711,5 +821,266 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
     public void setPregunta192(Pregunta pregunta192) {
         this.pregunta192 = pregunta192;
     }
-    
+
+    /**
+     * @return the continua
+     */
+    public String getContinua() {
+        return continua;
+    }
+
+    /**
+     * @param continua the continua to set
+     */
+    public void setContinua(String continua) {
+        this.continua = continua;
+    }
+    public void desbloqueaSiguiente(){
+        if(primeraPagina.equals("")){    
+            if( !pregunta1.getRespuesta().equals("0") 
+                && (!pregunta2.getClase().equals("")|(pregunta2.getClase().equals("")&&!pregunta2.getRespuesta().equals("0")))
+                && (!pregunta3.getClase().equals("")|(pregunta3.getClase().equals("")&&!pregunta3.getRespuesta().equals("0")))
+                && (!pregunta4.getClase().equals("")|(pregunta4.getClase().equals("")&&!pregunta4.getRespuesta().equals("0")))
+                && (!pregunta5.getClase().equals("")|(pregunta5.getClase().equals("")&&!pregunta5.getRespuesta().equals("0")))
+                && (!pregunta6.getClase().equals("")|(pregunta6.getClase().equals("")&&!pregunta6.getRespuesta().equals("0")))
+                && (!pregunta7.getClase().equals("")|(pregunta7.getClase().equals("")&&!pregunta7.getRespuesta().equals("0")))
+                && (!pregunta71.getClase().equals("")|(pregunta71.getClase().equals("")&&!pregunta71.getRespuesta().equals("0")))
+                && (!pregunta72.getClase().equals("")|(pregunta72.getClase().equals("")&&!pregunta72.getRespuesta().equals("0")))
+                && (!pregunta8.getClase().equals("")|(pregunta8.getClase().equals("")&&!pregunta8.getRespuesta().equals("0")))
+                && (!pregunta9.getClase().equals("")|(pregunta9.getClase().equals("")&&!pregunta9.getRespuesta().equals("0")))
+                && (!pregunta91.getClase().equals("")|(pregunta91.getClase().equals("")&&!pregunta91.getRespuesta().equals("0")))
+                && (!pregunta911.getClase().equals("")|(pregunta911.getClase().equals("")&&!pregunta911.getRespuesta().equals("0")))
+                && (!pregunta912.getClase().equals("")|(pregunta912.getClase().equals("")&&!pregunta912.getRespuesta().equals("0")))
+                && (!pregunta10.getClase().equals("")|(pregunta10.getClase().equals("")&&!pregunta10.getRespuesta().equals("0")))
+                                                                    )
+                    {
+                setContinua("");
+            }else{
+                setContinua("pointer-events: none;opacity: 0.5;");
+            }
+        }
+        if(segundaPagina.equals("")){
+            if(!pregunta11.getRespuesta().equals("0") 
+            && (!pregunta111.getClase().equals("")|(pregunta111.getClase().equals("")&&!pregunta111.getRespuesta().equals("0")))
+            && (!pregunta12.getClase().equals("")|(pregunta12.getClase().equals("")&&!pregunta12.getRespuesta().equals("0")))
+            && (!pregunta121.getClase().equals("")|(pregunta121.getClase().equals("")&&!pregunta121.getRespuesta().equals("0")))
+            && (!pregunta122.getClase().equals("")|(pregunta122.getClase().equals("")&&!pregunta122.getRespuesta().equals("0")))
+            && (!pregunta123.getClase().equals("")|(pregunta123.getClase().equals("")&&!pregunta123.getRespuesta().equals("0")))
+            && (!pregunta124.getClase().equals("")|(pregunta124.getClase().equals("")&&!pregunta124.getRespuesta().equals("0")))
+            && (!pregunta125.getClase().equals("")|(pregunta125.getClase().equals("")&&!pregunta125.getRespuesta().equals("0")))
+            && (!pregunta126.getClase().equals("")|(pregunta125.getClase().equals("")&&!pregunta126.getRespuesta().equals("0")))
+            && (!pregunta127.getClase().equals("")|(pregunta127.getClase().equals("")&&!pregunta127.getRespuesta().equals("0")))
+                                                              )
+                {
+            setContinuaDos("");
+            }else{
+                setContinuaDos("pointer-events: none;opacity: 0.5;");
+            }
+        }
+        if(terceraPagina.equals("")){
+            if(!pregunta13.getRespuesta().equals("0") 
+            && (!pregunta131.getClase().equals("")|(pregunta131.getClase().equals("")&&!pregunta131.getRespuesta().equals("0")))
+            && (!pregunta14.getClase().equals("")|(pregunta14.getClase().equals("")&&!pregunta14.getRespuesta().equals("0")))
+            && (!pregunta15.getClase().equals("")|(pregunta15.getClase().equals("")&&!pregunta15.getRespuesta().equals("0")))
+            && (!pregunta16.getClase().equals("")|(pregunta16.getClase().equals("")&&!pregunta16.getRespuesta().equals("0")))
+            && (!pregunta17.getClase().equals("")|(pregunta17.getClase().equals("")&&!pregunta17.getRespuesta().equals("0")))
+                                                             )
+                {
+            setContinuaTres("");
+            }else{
+                setContinuaTres("pointer-events: none;opacity: 0.5;");
+            }
+        }
+        
+        if(cuartaPagina.equals("")){
+            if(!pregunta18.getRespuesta().equals("0"))
+                {
+            setContinuaCuatro("");
+            }else{
+                setContinuaCuatro("pointer-events: none;opacity: 0.5;");
+            }
+        }
+        
+        if(quintaPagina.equals("")){
+            if(!pregunta19.getRespuesta().equals("0")
+                && (!pregunta191.getClase().equals("")|(pregunta191.getClase().equals("")&&!pregunta191.getRespuesta().equals("0")))
+                && (!pregunta192.getClase().equals("")|(pregunta192.getClase().equals("")&&!pregunta192.getRespuesta().equals("0")))
+           )
+                {
+                setFinaliza("");
+            }else{
+                setFinaliza("pointer-events: none;opacity: 0.5;");
+            }
+        }
+    }
+    public void segundaPagina(){
+        setContinua("display:none;");
+        setContinuaDos("pointer-events: none;opacity: 0.5;");
+        pregunta11.setClase("");
+        pregunta11.setRespuesta("0");
+        segundaPagina = "";
+        primeraPagina = "display:none !important";
+    }
+    public void terceraPagina(){
+        setContinuaDos("display:none;");
+        setContinuaTres("pointer-events: none;opacity: 0.5;");
+        pregunta13.setClase("");
+        pregunta13.setRespuesta("0");
+        pregunta14.setClase("");
+        pregunta14.setRespuesta("0");
+        pregunta15.setClase("");
+        pregunta15.setRespuesta("0");
+        pregunta16.setClase("");
+        pregunta16.setRespuesta("0");
+        pregunta17.setClase("");
+        pregunta17.setRespuesta("0");
+        terceraPagina = "";
+        segundaPagina = "display:none !important";
+    }
+    public void cuartaPagina(){
+        setContinuaTres("display:none;");
+        setContinuaCuatro("pointer-events: none;opacity: 0.5;");
+        pregunta18.setClase("");
+        pregunta18.setRespuesta("0");
+        
+        setCuartaPagina("");
+        terceraPagina = "display:none !important";
+    }
+    public void quintaPagina(){
+        setContinuaCuatro("display:none;");
+        setFinaliza("pointer-events: none;opacity: 0.5;");
+        pregunta19.setClase("");
+        pregunta19.setRespuesta("0");
+        
+        setQuintaPagina("");
+        setCuartaPagina("display:none !important");
+    }
+    public void finaliza(){
+        
+    }
+    /**
+     * @return the primeraPagina
+     */
+    public String getPrimeraPagina() {
+        return primeraPagina;
+    }
+
+    /**
+     * @param primeraPagina the primeraPagina to set
+     */
+    public void setPrimeraPagina(String primeraPagina) {
+        this.primeraPagina = primeraPagina;
+    }
+
+    /**
+     * @return the segundaPagina
+     */
+    public String getSegundaPagina() {
+        return segundaPagina;
+    }
+
+    /**
+     * @param segundaPagina the segundaPagina to set
+     */
+    public void setSegundaPagina(String segundaPagina) {
+        this.segundaPagina = segundaPagina;
+    }
+
+    /**
+     * @return the terceraPagina
+     */
+    public String getTerceraPagina() {
+        return terceraPagina;
+    }
+
+    /**
+     * @param terceraPagina the terceraPagina to set
+     */
+    public void setTerceraPagina(String terceraPagina) {
+        this.terceraPagina = terceraPagina;
+    }
+
+    /**
+     * @return the continuaDos
+     */
+    public String getContinuaDos() {
+        return continuaDos;
+    }
+
+    /**
+     * @param continuaDos the continuaDos to set
+     */
+    public void setContinuaDos(String continuaDos) {
+        this.continuaDos = continuaDos;
+    }
+
+    /**
+     * @return the continuaTres
+     */
+    public String getContinuaTres() {
+        return continuaTres;
+    }
+
+    /**
+     * @param continuaTres the continuaTres to set
+     */
+    public void setContinuaTres(String continuaTres) {
+        this.continuaTres = continuaTres;
+    }
+
+    /**
+     * @return the finaliza
+     */
+    public String getFinaliza() {
+        return finaliza;
+    }
+
+    /**
+     * @param finaliza the finaliza to set
+     */
+    public void setFinaliza(String finaliza) {
+        this.finaliza = finaliza;
+    }
+
+    /**
+     * @return the continuaCuatro
+     */
+    public String getContinuaCuatro() {
+        return continuaCuatro;
+    }
+
+    /**
+     * @param continuaCuatro the continuaCuatro to set
+     */
+    public void setContinuaCuatro(String continuaCuatro) {
+        this.continuaCuatro = continuaCuatro;
+    }
+
+    /**
+     * @return the cuartaPagina
+     */
+    public String getCuartaPagina() {
+        return cuartaPagina;
+    }
+
+    /**
+     * @param cuartaPagina the cuartaPagina to set
+     */
+    public void setCuartaPagina(String cuartaPagina) {
+        this.cuartaPagina = cuartaPagina;
+    }
+
+    /**
+     * @return the quintaPagina
+     */
+    public String getQuintaPagina() {
+        return quintaPagina;
+    }
+
+    /**
+     * @param quintaPagina the quintaPagina to set
+     */
+    public void setQuintaPagina(String quintaPagina) {
+        this.quintaPagina = quintaPagina;
+    }
 }
