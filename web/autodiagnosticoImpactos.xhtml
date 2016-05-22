@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <h:outputStylesheet name="css/style.css" />
+        <link rel="stylesheet" href="css/style.css"></link>
+        
+        <link rel="stylesheet" href="../css/style.css"></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"></link>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src="http://enscrollplugin.com/releases/enscroll-0.6.0.min.js"></script>
+       
+
+        <title>.:Autodiagnostico Impactos:.</title>
+    </h:head>
+    <h:body>
+         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid barratop">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="" href="#"><img src="img/logos.png"/></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><h:link outcome="menu" value="" class=""><img src="img/home.png"/>Inicio</h:link></li>
+                        <li><h:link outcome="index" value="" class=""><img src="img/logout.png"/>Cerrar Sesion</h:link></li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="barrarojo">
+            <div class="col-md-10 centrar">
+                <img src="img/lapiz.png"/>
+                Autodiagnostico sobre la gestión <b>de impactos sociales,ambientales,económicos</b>  y de gobierno corporativo
+            </div>
+        </div>
+        <div class="row" id="barrarojoosc">
+            <div class="col-md-10 centrar">
+                <div class="col-md-4">
+                    Empresa:
+                    <h:outputText value="#{focosBean.empresa}" style="font-weight:bold"/>
+                </div>
+                <div class="col-md-4">
+                    Sector:
+                    <h:outputText value="#{focosBean.sector}" style="font-weight:bold"/>
+                </div>
+                <div class="col-md-4">
+                    Subsector:
+                    <h:outputText value="#{focosBean.subSector}" style="font-weight:bold"/>
+                </div>
+            </div>
+        </div>
+        <div class="row contenido">
+            
+                <div id="preguntasContainer" class="col-md-10 centrar">
+                   
+                    <h:form id="formu">
+                    
+                        <ul style="#{autodiagnosticoImpactosBean.primeraPagina}"> 
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta1.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta1.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta1" value="#{autodiagnosticoImpactosBean.pregunta1.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}"  update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Si" itemValue="1" />
+                                    <f:selectItem itemLabel="No" itemValue="2" />
+                                </p:selectOneMenu>
+                        </li>
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta2.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta2.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta2" value="#{autodiagnosticoImpactosBean.pregunta2.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Si" itemValue="1" />
+                                    <f:selectItem itemLabel="No" itemValue="2" />
+                                </p:selectOneMenu>
+                        </li>
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta3.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta3.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta3" value="#{autodiagnosticoImpactosBean.pregunta3.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Entre 1 y 3" itemValue="1" />
+                                    <f:selectItem itemLabel="Más de 3" itemValue="2" />
+                                </p:selectOneMenu>
+                        </li>
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta4.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta4.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta4" value="#{autodiagnosticoImpactosBean.pregunta4.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí – están identificados y conocemos sus necesidades y expectativas" itemValue="1" />
+                                    <f:selectItem itemLabel="Sí – están identificados" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta5.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta5.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta5" value="#{autodiagnosticoImpactosBean.pregunta5.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí – se identificó la incidencia de estas problemáticas a través de una caracterización de la población en nuestras zonas de influencia" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta51.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta51.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta51" value="#{autodiagnosticoImpactosBean.pregunta51.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                         <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta52.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta52.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta52" value="#{autodiagnosticoImpactosBean.pregunta52.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                         <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta521.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta521.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta521" value="#{autodiagnosticoImpactosBean.pregunta521.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta53.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta53.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta53" value="#{autodiagnosticoImpactosBean.pregunta53.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                            
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta54.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta54.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta54" value="#{autodiagnosticoImpactosBean.pregunta54.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                            
+                            <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta55.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta55.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta55" value="#{autodiagnosticoImpactosBean.pregunta55.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                            
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta56.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta56.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta56" value="#{autodiagnosticoImpactosBean.pregunta56.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                            
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta561.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta561.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta561" value="#{autodiagnosticoImpactosBean.pregunta561.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                            
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta562.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta562.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta562" value="#{autodiagnosticoImpactosBean.pregunta562.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                            
+                        <li class="col-md-6" style="#{autodiagnosticoImpactosBean.pregunta563.clase}">
+                                <h3>#{autodiagnosticoImpactosBean.pregunta563.preguntaDescripcion}</h3>
+
+                                <p:selectOneMenu id="pregunta563" value="#{autodiagnosticoImpactosBean.pregunta563.respuesta}" style="width:100%">
+                                    <p:ajax listener="#{autodiagnosticoImpactosBean.respondePregunta()}" update="formu" />
+                                    <f:selectItem itemLabel="" itemValue="0" />
+                                    <f:selectItem itemLabel="Sí" itemValue="1" />
+                                    <f:selectItem itemLabel="No estoy seguro/a" itemValue="2" />
+                                    <f:selectItem itemLabel="No" itemValue="3" />
+                                </p:selectOneMenu>
+                        </li>
+                        
+                    </ul>
+                    
+                    <div class="col-md-12">
+                            <h:commandButton actionListener="#{autodiagnosticoImpactosBean.segundaPagina()}" id="siguno" value="Siguiente" class="btn btn-danger col-md-2 col-md-offset-5" title="siguiente" style="#{autodiagnosticoImpactosBean.continua}" />
+                            
+                    </div>
+                        
+                    </h:form>
+                    </div>
+                    
+               
+        </div>
+    </h:body>
+   <!-- <div id="footermontado" class="row">
+        <p>ojo</p>
+    </div>-->
+   <script>
+       $('#bodyDiv, #scrollbox3').enscroll({
+    showOnHover: false,
+    verticalTrackClass: 'track3',
+    verticalHandleClass: 'handle3'
+});
+       </script>
+</html>
+
