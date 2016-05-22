@@ -7,6 +7,13 @@ and open the template in the editor.
     Created on : 8/04/2016, 06:30:21 PM
     Author     : juanse0529
 */
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+h1 , h2, h3, p{
+    font-family: 'Open Sans', sans-serif !important;
+}
 #container{
    background: url('../img/fondo.png');
    background-repeat: no-repeat;
@@ -22,6 +29,9 @@ and open the template in the editor.
     width: 12px;
     margin-top: 6px !important;
     margin-left: -10px !important;
+}
+.back{
+    margin-right: 0px !important;
 }
 #preguntasContainer ul li {
     display: inline !important;
@@ -79,6 +89,7 @@ and open the template in the editor.
     font-size: 15px;
     padding: 0px;
     margin: 5px;
+        line-height: 25px;
 }
 #desc{
 padding-right: 25px;
@@ -98,22 +109,28 @@ padding-right: 25px;
     float: right;
     margin-top: 55px;
     border-radius: 20px;
+        background-color: #8CBB15 !important;
+    border-color: #8CBB15 !important;
 
 }
 .barratop{
         background: rgb(241,241,241);
 }
+.listado{
+    padding-top: 40px;
+}
 #footermontado {
     background: url('../img/footer.png');
     background-repeat: no-repeat;
     background-size: 100%;
-    min-height: 240px;
+    min-height: 225px;
+    margin-right: 0px !important;
     position: relative;
     margin-top: -190px;
     z-index: 500;
 }
 #desc h3,#complete h4{
-    color: green !important;
+    color: #8CBB15 !important;
 }
 #desc img {
     padding: 25px 0px 25px 0px;
@@ -129,15 +146,15 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/empresa.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .ui-selectonemenu .ui-selectonemenu-trigger {
     border-right: none;
@@ -162,15 +179,15 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/subsector.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .verde2 {
     border-radius: 0px;
@@ -180,15 +197,15 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/sector.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .verde3 {
     margin-top: 20px;
@@ -197,15 +214,15 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/nombres.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .verde4 {
     margin-top: 20px;
@@ -214,15 +231,15 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/cargo.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .verde5 {
     margin-top: 20px;
@@ -231,15 +248,15 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/area.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .verde6 {
     margin-top: 20px;
@@ -248,32 +265,32 @@ padding-right: 25px;
     border: none !important;
     background-image: url('../img/cargo.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .verde7 {
     margin-top: 20px;
     height: 36px;
     width: 100%;
     border: none !important;
-    background-image: url('../img/area.png') !important;
+    background-image: url('../img/contrasena.png') !important;
     background-repeat: no-repeat !important;
-    border-left: 2px solid green !important;
-    border-bottom: 2px solid green !important;
+    border-left: 1px solid black !important;
+    border-bottom: 1px solid black !important;
     background-position: 0px;
-    background-position-x: -30px;
+    background-position-x: -50px;
     background-position-y: 0px;
     background-size: contain;
     padding-bottom: 5px;
     background-origin: content-box;
-    padding-left: 40px;
+    padding-left: 60px;
 }
 .ui-selectonemenu-label {
     cursor: pointer;
@@ -287,6 +304,9 @@ padding-right: 25px;
     line-height: 30px;
     text-align: justify;
 
+}
+.verde1 label,.verde2 label{
+    margin-left: -4px;
 }
 .back {
     background-image: url('../img/back.png');
@@ -331,23 +351,32 @@ ul li{
 }
 #barraazul{
     background: rgb(54,47,146);
-        margin-top: 70px;
+        margin-top: 60px;
+        color:white;
+            width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+#barrarojo{
+    background: rgb(215,0,42);
+        margin-top: 60px;
         color:white;
             width: 100%;
     margin-right: 0px;
     margin-left: 0px;
 }
 #barranaranja{
-    background: #ec971f;
-        margin-top: 70px;
+    background: #f6a600;
+        margin-top: 60px;
         color:white;
             width: 100%;
     margin-right: 0px;
     margin-left: 0px;
 }
 #barraverde{
-    background: #5bc0de;
-        margin-top: 70px;
+    background: #00aaa6;
+        margin-top: 60px;
         color:white;
             width: 100%;
     margin-right: 0px;
@@ -362,6 +391,8 @@ ul li{
 }
 
 .contenido ul {
+        max-height: 400px;
+    overflow-y: scroll;
     margin-top: 0;
     margin-bottom: 10px;
     padding-left: 20px;
@@ -376,18 +407,29 @@ ul li{
     margin: 0px !important;
     padding: 0px;
 }
-.contenido ul li{
-   display: list-item !important; 
-   list-style-image: url('../img/selector.png');
-}  
+.listado ul li{
+
+    background: url('../img/selector.png') no-repeat 11px 12px transparent;
+    list-style-type: none;
+    margin: 0;
+    padding: 0px 0px 1px 24px;
+    vertical-align: middle;
+
+} 
+#preguntasContainer{
+    padding-top: 40px;
+}
+#preguntasContainer ul li{
+    background: none !important;
+}
 .centrar span{
         text-transform: uppercase;
 }
 
-#barraazul .centrar{
+#barraazul .centrar,#barranaranja .centrar,#barraverde .centrar, #barrarojo .centrar{
         padding-top: 15px;
     padding-bottom: 15px;
-    font-size: 20px;
+    font-size: 19px;
 }
 #barraazulosc{
     background: rgb(42,50,96);
@@ -398,8 +440,17 @@ ul li{
     margin-right: 0px;
     margin-left: 0px;
 }
+#barrarojoosc{
+    background: rgb(145,14,30);
+    color:white;
+        padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
 #barraverdeosc{
-    background: #5BC0B4;
+    background: #046965;
     color:white;
         padding-top: 10px;
     padding-bottom: 10px;
@@ -408,8 +459,8 @@ ul li{
     margin-left: 0px;
 }
 
-#barranaranjaosc{
-    background: #EC977A;
+#barranaranajaosc{
+    background: #b57d05;
     color:white;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -428,12 +479,23 @@ ul li{
 .center-row {
  display:table;
 }
+.navbar-right li{
+    padding-right: 30px;
+}
+#fila1,#fila2,#footer{
+    margin: 0px !important;
+}
+.btn{
+    border-radius: 20px !important;
+        padding: 5px 30px 5px 30px !important;
+}
 #fila1Col1{
    background: url('../img/gestion.png');
    background-repeat: no-repeat;
    background-size: 100%;
    min-height: 440px;
    padding-top: 70px;
+   margin-right: -2px;
 }
 #fila1Col2 img{
 padding-bottom: 10px;
@@ -462,11 +524,34 @@ padding-bottom: 10px;
     vertical-align: bottom;
     padding-left: 15px;
 }
+#fila1{
+    padding-top: 45px;
+}
 #fila1 p{
     text-align: center;
     color: white;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 100;
+}
+.btn-primary {
+    color: #fff;
+    background-color: rgb(33,48,135) !important;
+    border-color: rgb(33,48,135) !important;
+}
+.btn-info {
+    color: #fff;
+    background-color: rgb(0,170,166) !important;
+    border-color: rgb(0,170,166) !important;
+}
+.btn-warning {
+    color: #fff;
+    background-color: rgb(246,166,0) !important;
+    border-color: rgb(246,166,0) !important;
+}
+#lapiz img{
+        
+    padding-left: 20px;
+    padding-right: 20px;
 }
 #casita a{
     color: #6b9118;
@@ -479,7 +564,7 @@ padding-bottom: 10px;
    background: url('../img/footer.png');
    background-repeat: no-repeat;
    background-size: 100%;
-   min-height: 240px;
+   min-height: 222px;
    position: relative;
    z-index: 0;
 }

@@ -156,31 +156,50 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
             cambiarEstadoDependeDos("");
         }else{
             cambiarEstadoDependeDos("display:none !important;"); 
-            
+            pregunta3.setRespuesta("0");
+            pregunta4.setRespuesta("0");
+        }
+        if(pregunta4.getRespuesta().equals("1") || pregunta4.getRespuesta().equals("2")){
+            cambiarEstadoDependeCuatro("");
+        }else{
+            cambiarEstadoDependeCuatro("display:none !important;"); 
+            pregunta5.setRespuesta("0");
+            pregunta6.setRespuesta("0");
         }
         if(pregunta6.getRespuesta().equals("1") || pregunta6.getRespuesta().equals("2")){
             cambiarEstadoDependeSeis("");
         }else{
             cambiarEstadoDependeSeis("display:none !important;"); 
+            pregunta7.setRespuesta("0");
         }
+        
+        if(pregunta7 != null){
+            if(pregunta7.getRespuesta().equals("1") || pregunta7.getRespuesta().equals("2")){
+            cambiarEstadoDependeSiete("");
+            }else{
+                cambiarEstadoDependeSiete("display:none !important;");
+                pregunta71.setRespuesta("0");
+                pregunta72.setRespuesta("0");
+                pregunta8.setRespuesta("0");
+                pregunta9.setRespuesta("0");
+            }
+        }
+        
         if(pregunta9.getRespuesta().equals("1")){
             cambiarEstadoDependeNueve("");
         }else{
             cambiarEstadoDependeNueve("display:none !important;"); 
+            pregunta91.setRespuesta("0");
         }
         
-        if(pregunta7 != null){
-            if(pregunta7.getRespuesta().equals("1")){
-            cambiarEstadoDependeSiete("");
-            }else{
-                cambiarEstadoDependeSiete("display:none !important;"); 
-            }
-        }
+        
         if(pregunta91 != null){
             if(pregunta91.getRespuesta().equals("1")){
                 cambiarEstadoDependeNueveUno("");
             }else{
                 cambiarEstadoDependeNueveUno("display:none !important;"); 
+                pregunta911.setRespuesta("0");
+                pregunta912.setRespuesta("0");
             }
         }
         if(pregunta13 != null){
@@ -195,6 +214,7 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
                 cambiarEstadoDependeOnce("");
             }else{
                 cambiarEstadoDependeOnce("display:none !important;"); 
+                
             }
         }
         if(pregunta12 != null){
@@ -269,8 +289,13 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
     }
     public void cambiarEstadoDependeOnce(String accion){
         pregunta111.setClase(accion);
-        pregunta12.setClase(accion);
-        
+        if(pregunta11.getRespuesta().equals("0")){
+            pregunta12.setRespuesta("0");
+            pregunta12.setClase("display:none !important;");
+        }
+        if(pregunta11.getRespuesta().equals("2")){
+            pregunta12.setClase("");
+        }
     }
     public void cambiarEstadoDependeDoce(String accion){
         pregunta121.setClase(accion);
@@ -285,21 +310,37 @@ public class AutodiagnosticoDonacionesBean implements Serializable {
     public void cambiarEstadoDependeDos(String accion){
         pregunta3.setClase(accion);
         pregunta4.setClase(accion);
+        
+    }
+    public void cambiarEstadoDependeCuatro(String accion){
+        
         pregunta5.setClase(accion);
         pregunta6.setClase(accion);
-        pregunta9.setClase(accion);
-        if(!accion.equals("")){
-            pregunta6.setRespuesta("0");
-            pregunta9.setRespuesta("0");
+        
+        if(pregunta4.getRespuesta().equals("3")){
+            pregunta5.setClase("display:none !important;");
+            pregunta6.setClase("");
         }
+        
     }
     public void cambiarEstadoDependeSeis(String accion){
         pregunta7.setClase(accion);
-        pregunta8.setClase(accion);
+        if(pregunta6.getRespuesta().equals("3")){
+            pregunta9.setClase("");
+        }
     }
     public void cambiarEstadoDependeSiete(String accion){
         pregunta71.setClase(accion);
         pregunta72.setClase(accion);
+        pregunta8.setClase(accion);
+        pregunta9.setClase(accion);
+        if(pregunta6.getRespuesta().equals("3")){
+            pregunta9.setClase("");
+        }
+        if(pregunta7.getRespuesta().equals("2")){
+            pregunta71.setClase("display:none !important;");
+            pregunta72.setClase("display:none !important;");
+        }
     }
     public void cambiarEstadoDependeNueve(String accion){
         pregunta91.setClase(accion);
